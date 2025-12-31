@@ -1,0 +1,137 @@
+/* src/styles/studentAssignments.css */
+
+.sa-page {
+  padding: 28px;
+  color: var(--text-main);
+}
+
+/* Header */
+.sa-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.sa-header p {
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+
+/* Cards */
+.sa-cards {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sa-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.sa-card h3 {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.sa-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.sa-value.success {
+  color: #10b981;
+}
+
+.sa-value.warning {
+  color: #f59e0b;
+}
+
+/* Table */
+.sa-table-box {
+  margin-top: 30px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.sa-table-box h2 {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.sa-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sa-table th,
+.sa-table td {
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.sa-table th {
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.sa-table tr:not(:last-child) td {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Badges */
+.badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.submitted {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.badge.pending {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+/* Buttons */
+.btn-view,
+.btn-upload {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-view {
+  background: transparent;
+  color: var(--brand);
+  border: 1px solid var(--border);
+}
+
+.btn-upload {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sa-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .sa-page {
+    padding: 20px;
+  }
+}

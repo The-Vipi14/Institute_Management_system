@@ -1,0 +1,116 @@
+/* src/styles/studentPerformance.css */
+
+.sp-page {
+  padding: 28px;
+  color: var(--text-main);
+}
+
+/* Header */
+.sp-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.sp-header p {
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+
+/* Stats */
+.sp-stats {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.sp-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.sp-stat h4 {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.sp-stat span {
+  display: block;
+  margin-top: 10px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.sp-stat.primary {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  border: none;
+}
+
+.sp-stat.primary h4 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Grid */
+.sp-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.sp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.sp-card h3 {
+  margin-bottom: 14px;
+  font-size: 18px;
+}
+
+/* Placeholders */
+.sp-placeholder {
+  height: 240px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.sp-empty {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sp-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .sp-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-page {
+    padding: 20px;
+  }
+}

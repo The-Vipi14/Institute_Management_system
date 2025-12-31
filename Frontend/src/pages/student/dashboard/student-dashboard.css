@@ -1,69 +1,5 @@
-.sd-page {
-  padding: 32px;
-  background: var(--bg-main);
-  color: var(--text-main);
-  min-height: 100vh;
-  font-family: Inter, system-ui, Arial, sans-serif;
-}
-
-/* HEADER */
-.sd-header h1 {
-  font-size: 28px;
+h1 {
   margin-bottom: 4px;
-}
-
-.sd-header p {
-  color: var(--text-muted);
-  margin-bottom: 32px;
-}
-
-/* STATS */
-.sd-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 40px;
-}
-
-.sd-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 20px;
-}
-
-.sd-card h3 {
-  font-size: 14px;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.sd-value {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-/* SECTION */
-.sd-section h2 {
-  font-size: 20px;
-  margin-bottom: 16px;
-}
-
-.sd-list {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-}
-
-.sd-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--border);
-}
-
-.sd-item:last-child {
-  border-bottom: none;
 }
 
 .muted {
@@ -71,15 +7,50 @@
   font-size: 14px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .sd-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.dash-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 24px 0;
 }
 
-@media (max-width: 600px) {
-  .sd-stats {
-    grid-template-columns: 1fr;
-  }
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.card.blue {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.card.big {
+  grid-column: span 2;
+}
+
+.placeholder {
+  margin-top: 20px;
+  height: 160px;
+  border: 2px dashed #e5e7eb;
+  display: grid;
+  place-items: center;
+  color: #94a3b8;
+}
+
+.donut {
+  margin: 30px auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 10px solid #2563eb;
+  display: grid;
+  place-items: center;
 }

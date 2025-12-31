@@ -1,0 +1,20 @@
+.student-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden; /* 🔥 body scroll band */
+}
+
+/* Sidebar fixed height */
+.student-layout aside {
+  width: 260px;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+/* ONLY RIGHT SIDE SCROLL */
+.student-main {
+  flex: 1;
+  overflow-y: auto;      /* ✅ sirf yahan scroll */
+  padding: 24px 32px;
+  background: #f8fafc;
+}

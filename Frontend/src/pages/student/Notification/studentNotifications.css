@@ -1,0 +1,120 @@
+/* src/styles/studentNotifications.css */
+
+.sn-page {
+  padding: 28px;
+  color: var(--text-main);
+}
+
+/* Header */
+.sn-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.sn-header p {
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+
+/* Filters */
+.sn-filters {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sn-filter {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.sn-filter.active {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+/* List */
+.sn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sn-item {
+  display: flex;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.sn-item.unread {
+  border-left: 4px solid var(--brand);
+}
+
+/* Icon */
+.sn-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.sn-icon.assignment {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.sn-icon.quiz {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.sn-icon.attendance {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.sn-icon.general {
+  background: rgba(124, 58, 237, 0.15);
+  color: #7c3aed;
+}
+
+/* Content */
+.sn-content h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.sn-content p {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.sn-time {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .sn-page {
+    padding: 20px;
+  }
+
+  .sn-item {
+    padding: 14px;
+  }
+}

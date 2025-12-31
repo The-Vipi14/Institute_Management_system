@@ -1,0 +1,140 @@
+/* src/styles/studentProfile.css */
+
+.sp-page {
+  padding: 28px;
+  color: var(--text-main);
+}
+
+/* Header */
+.sp-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.sp-header p {
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+
+/* Top */
+.sp-top {
+  margin-top: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sp-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.sp-basic h2 {
+  margin: 0;
+}
+
+.sp-basic p {
+  margin-top: 4px;
+  color: var(--text-muted);
+}
+
+.sp-edit {
+  margin-left: auto;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: var(--brand);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Grid */
+.sp-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Card */
+.sp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.sp-card h3 {
+  margin-bottom: 14px;
+  font-size: 18px;
+}
+
+/* Rows */
+.sp-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.sp-row:last-child {
+  border-bottom: none;
+}
+
+.status.active {
+  color: #10b981;
+}
+
+/* Actions */
+.sp-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.sp-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+}
+
+.sp-btn.outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+}
+
+.sp-btn.danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sp-edit {
+    margin-left: 0;
+  }
+}
