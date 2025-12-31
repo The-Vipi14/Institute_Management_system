@@ -1,0 +1,152 @@
+.admin-login {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+
+/* LEFT */
+.login-left {
+  width: 45%;
+  padding: 50px 70px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.logo {
+  background: #2563eb;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand h3 {
+  margin: 0;
+}
+
+.brand p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.login-form label {
+  font-weight: 600;
+  display: block;
+  margin: 18px 0 6px;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 8px;
+  gap: 10px;
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+}
+
+.eye {
+  cursor: pointer;
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.demo {
+  margin-top: 40px;
+}
+
+.demo p {
+  font-size: 13px;
+  color: #888;
+}
+
+.demo-card {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.signup {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.signup span {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* RIGHT */
+.login-right {
+  width: 55%;
+  background: linear-gradient(180deg, #0f2a66, #0b4bb3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-content {
+  text-align: center;
+  max-width: 420px;
+}
+
+.big-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.right-content p {
+  opacity: 0.9;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.stats div {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 18px 22px;
+  border-radius: 14px;
+  width: 120px;
+}
+
+.stats h3 {
+  margin: 0;
+  font-size: 26px;
+}
