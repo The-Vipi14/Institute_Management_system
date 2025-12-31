@@ -1,64 +1,45 @@
 import "./AdminLogin.css";
 
-const AdminLogin = () => {
+const Login = () => {
   return (
-    <div className="admin-login">
+    <div className="login-page">
       {/* LEFT */}
       <div className="login-left">
-        <div className="brand">
-          <div className="logo">🎓</div>
-          <div>
-            <h3>Institute MS</h3>
+        <div className="login-box">
+          <div className="login-header">
+            <div className="logo">🎓</div>
+            <h1>Institute MS</h1>
             <p>Management System</p>
           </div>
-        </div>
 
-        <h1>Welcome back</h1>
-        <p className="subtitle">Sign in to access your dashboard</p>
+          <h2>Welcome back</h2>
+          <p className="subtitle">Sign in to access your dashboard</p>
 
-        <form className="login-form">
-          <label>Email Address</label>
-          <div className="input-box">
-            <span>📧</span>
+          <form className="login-form">
+            <label>Email Address</label>
             <input type="email" placeholder="Enter your email" />
-          </div>
 
-          <label>Password</label>
-          <div className="input-box">
-            <span>🔒</span>
+            <label>Password</label>
             <input type="password" placeholder="Enter your password" />
-            <span className="eye">👁️</span>
-          </div>
 
-          <button className="login-btn">Sign In</button>
-        </form>
+            <button type="button" className="btn-primary">
+              Sign In
+            </button>
 
-        <div className="demo">
-          <p>DEMO ACCOUNTS</p>
+            {/* functionality baad me */}
+            {/* <button onClick={handleLogin}>Sign In</button> */}
 
-          <div className="demo-card">
-            <strong>Admin</strong>
-            <span>admin@institute.com</span>
-          </div>
-          <div className="demo-card">
-            <strong>Trainer</strong>
-            <span>sarah@institute.com</span>
-          </div>
-          <div className="demo-card">
-            <strong>Student</strong>
-            <span>john@student.com</span>
-          </div>
+            <p className="bottom-text">
+              Don’t have an account? <span>Create one</span>
+            </p>
+          </form>
         </div>
-
-        <p className="signup">
-          Don't have an account? <span>Create one</span>
-        </p>
       </div>
 
       {/* RIGHT */}
       <div className="login-right">
         <div className="right-content">
-          <div className="big-icon">🎓</div>
+          <div className="icon-box">🎓</div>
           <h2>Institute Management System</h2>
           <p>
             Streamline your educational institution with our comprehensive
@@ -85,4 +66,4 @@ const AdminLogin = () => {
   );
 };
 
-export default AdminLogin;
+export default Login;
