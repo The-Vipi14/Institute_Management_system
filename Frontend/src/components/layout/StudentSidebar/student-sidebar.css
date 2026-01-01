@@ -1,55 +1,90 @@
-.sidebar {
+.student-sidebar {
+  height: 100vh;
   background: linear-gradient(180deg, #020617, #020617);
   color: #e5e7eb;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
 }
 
-.sidebar-top {
-  text-align: center;
-  margin-bottom: 30px;
+/* TOP */
+.ss-top {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 28px;
 }
 
-.sidebar-top .logo {
+.ss-logo {
   width: 44px;
   height: 44px;
   background: #2563eb;
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 8px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
 }
 
-.sidebar-top span {
+.ss-top p {
   font-size: 12px;
   color: #94a3b8;
 }
 
-.sidebar-nav {
+/* NAV */
+.ss-nav {
   display: flex;
   flex-direction: column;
   gap: 6px;
   flex: 1;
 }
 
-.sidebar-nav a {
-  padding: 10px 14px;
+.ss-nav a {
+  padding: 11px 14px;
   border-radius: 10px;
   cursor: pointer;
   color: #cbd5f5;
+  font-size: 14px;
   transition: 0.2s;
 }
 
-.sidebar-nav a:hover,
-.sidebar-nav a.active {
+.ss-nav a:hover,
+.ss-nav a.active {
   background: #2563eb;
   color: #fff;
 }
 
-.sidebar-footer {
+/* BOTTOM */
+.ss-bottom {
   border-top: 1px solid #1e293b;
   padding-top: 14px;
-  font-size: 14px;
+}
+
+.ss-user {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: #2563eb;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.ss-nav a.active {
+  background: #2563eb;
+  color: #fff;
 }

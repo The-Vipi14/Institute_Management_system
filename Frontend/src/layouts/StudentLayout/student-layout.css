@@ -1,20 +1,22 @@
 .student-layout {
   display: flex;
   height: 100vh;
-  overflow: hidden; /* 🔥 body scroll band */
+  overflow: hidden; /* 🚫 full page scroll band */
+  background: var(--bg-main);
 }
 
-/* Sidebar fixed height */
-.student-layout aside {
+/* Sidebar space fix */
+.student-layout > aside {
   width: 260px;
   height: 100vh;
   flex-shrink: 0;
 }
 
 /* ONLY RIGHT SIDE SCROLL */
-.student-main {
+.student-content {
   flex: 1;
-  overflow-y: auto;      /* ✅ sirf yahan scroll */
+  height: 100vh;
+  overflow-y: auto;   /* ✅ sirf yahan scroll */
   padding: 24px 32px;
   background: #f8fafc;
 }
