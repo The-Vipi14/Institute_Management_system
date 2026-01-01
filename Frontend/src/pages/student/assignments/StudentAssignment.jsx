@@ -1,90 +1,114 @@
 // src/pages/student/Assignments.jsx
 import "./studentAssignments.css";
+import { useState } from "react";
+
+/* MOCK DATA – Teacher uploaded assignments */
+const initialAssignments = [
+  {
+    id: 1,
+    title: "React Hooks Assignment",
+    description: "Practice useState, useEffect, and useContext with examples.",
+    dueDate: "2024-10-05",
+    teacherFile: "react-hooks-assignment.pdf",
+    submitted: false,
+    studentFile: null,
+  },
+  {
+    id: 2,
+    title: "JavaScript Fundamentals",
+    description: "Explain closures, hoisting, promises with examples.",
+    dueDate: "2024-10-02",
+    teacherFile: "javascript-fundamentals.pdf",
+    submitted: true,
+    studentFile: "js-fundamentals-solution.pdf",
+  },
+];
 
 const Assignments = () => {
+  const [assignments, setAssignments] = useState(initialAssignments);
+
+  const handleUpload = (id, file) => {
+    if (!file) return;
+
+    setAssignments((prev) =>
+      prev.map((a) =>
+        a.id === id
+          ? {
+              ...a,
+              submitted: true,
+              studentFile: file.name,
+            }
+          : a
+      )
+    );
+  };
+
   return (
     <div className="sa-page">
       {/* Header */}
       <div className="sa-header">
         <h1>Assignments</h1>
-        <p>Track your assignments and submission status</p>
+        <p>
+          Download assignments shared by your trainer and upload your solution
+          in PDF format
+        </p>
       </div>
 
-      {/* Summary cards */}
-      <div className="sa-cards">
-        <div className="sa-card">
-          <h3>Total Assignments</h3>
-          <span className="sa-value">5</span>
-        </div>
+      {/* Assignment List */}
+      <div className="sa-list">
+        {assignments.map((item) => (
+          <div key={item.id} className="sa-card">
+            {/* LEFT */}
+            <div className="sa-info">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
 
-        <div className="sa-card">
-          <h3>Submitted</h3>
-          <span className="sa-value success">3</span>
-        </div>
+              <div className="sa-meta">
+                <span>
+                  Due: <b>{item.dueDate}</b>
+                </span>
 
-        <div className="sa-card">
-          <h3>Pending</h3>
-          <span className="sa-value warning">2</span>
-        </div>
-      </div>
+                {item.submitted ? (
+                  <span className="status submitted">Submitted</span>
+                ) : (
+                  <span className="status pending">Pending</span>
+                )}
+              </div>
 
-      {/* Assignment list */}
-      <div className="sa-table-box">
-        <h2>Assignment List</h2>
+              {/* Teacher File */}
+              <div className="teacher-file">
+                <span>📄 Assignment File:</span>
+                <a href="#" className="file-link">
+                  {item.teacherFile}
+                </a>
+              </div>
+            </div>
 
-        <table className="sa-table">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Due Date</th>
-              <th>Status</th>
-              <th>Grade</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>HTML Structure</td>
-              <td>12 Jan 2025</td>
-              <td><span className="badge submitted">Submitted</span></td>
-              <td>8 / 10</td>
-              <td>
-                <button className="btn-view">View</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>CSS Layout</td>
-              <td>18 Jan 2025</td>
-              <td><span className="badge submitted">Submitted</span></td>
-              <td>7 / 10</td>
-              <td>
-                <button className="btn-view">View</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>JavaScript Basics</td>
-              <td>24 Jan 2025</td>
-              <td><span className="badge pending">Pending</span></td>
-              <td>—</td>
-              <td>
-                <button className="btn-upload">Upload</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>DOM Manipulation</td>
-              <td>30 Jan 2025</td>
-              <td><span className="badge pending">Pending</span></td>
-              <td>—</td>
-              <td>
-                <button className="btn-upload">Upload</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            {/* RIGHT */}
+            <div className="sa-action">
+              {item.submitted ? (
+                <div className="file-info">
+                  <span>✅ Your submission:</span>
+                  <span className="file-name">
+                    {item.studentFile}
+                  </span>
+                </div>
+              ) : (
+                <label className="upload-btn">
+                  Upload Solution (PDF)
+                  <input
+                    type="file"
+                    accept="application/pdf"
+                    hidden
+                    onChange={(e) =>
+                      handleUpload(item.id, e.target.files[0])
+                    }
+                  />
+                </label>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

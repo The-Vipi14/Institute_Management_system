@@ -1,61 +1,111 @@
 // src/pages/student/Performance.jsx
 import "./studentPerformance.css";
 
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+} from "recharts";
+
+/* MOCK DATA */
+const progressData = [
+  { week: "W1", score: 20 },
+  { week: "W2", score: 40 },
+  { week: "W3", score: 55 },
+  { week: "W4", score: 70 },
+  { week: "W5", score: 80 },
+];
+
+const scoreData = [
+  { name: "Quizzes", value: 60 },
+  { name: "Assignments", value: 40 },
+];
+
 const Performance = () => {
   return (
     <div className="sp-page">
       {/* Header */}
       <div className="sp-header">
         <h1>Performance</h1>
-        <p>Track your academic progress</p>
+        <p>Track your academic progress over time</p>
       </div>
 
       {/* Top stats */}
-      <div className="sp-stats">
-        <div className="sp-stat primary">
-          <h4>Overall Score</h4>
-          <span>0%</span>
+      <div className="sp-cards">
+        <div className="sp-card primary">
+          <span>Overall Score</span>
+          <h2>80%</h2>
         </div>
 
-        <div className="sp-stat">
-          <h4>Attendance</h4>
-          <span>0%</span>
+        <div className="sp-card">
+          <span>Attendance</span>
+          <h3>85%</h3>
         </div>
 
-        <div className="sp-stat">
-          <h4>Quiz Average</h4>
-          <span>0%</span>
+        <div className="sp-card">
+          <span>Quiz Avg</span>
+          <h3>60%</h3>
         </div>
 
-        <div className="sp-stat">
-          <h4>Assignment Avg</h4>
-          <span>0%</span>
+        <div className="sp-card">
+          <span>Assignment Avg</span>
+          <h3>40%</h3>
         </div>
       </div>
 
-      {/* Middle section */}
+      {/* Charts */}
       <div className="sp-grid">
-        <div className="sp-card">
-          <h3>Performance Overview</h3>
-          <div className="sp-placeholder">
-            Chart will appear here
+        {/* Line chart */}
+        <div className="sp-box wide">
+          <h3>Overall Progress</h3>
+          <div className="chart-box">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={progressData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="week" />
+                <YAxis />
+                <Tooltip />
+                <Line
+                  type="monotone"
+                  dataKey="score"
+                  stroke="#2563eb"
+                  strokeWidth={3}
+                />
+              </LineChart>
+            </ResponsiveContainer>
           </div>
         </div>
 
-        <div className="sp-card">
-          <h3>Quiz Progress</h3>
-          <div className="sp-empty">
-            No quiz data yet
+        {/* Bar chart */}
+        <div className="sp-box">
+          <h3>Score Distribution</h3>
+          <div className="chart-box">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={scoreData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="value" fill="#10b981" radius={[6, 6, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
           </div>
         </div>
       </div>
 
-      {/* Bottom */}
-      <div className="sp-card">
-        <h3>Assignment Scores</h3>
-        <div className="sp-empty">
-          No graded assignments yet
-        </div>
+      {/* Summary */}
+      <div className="sp-box">
+        <h3>Performance Summary</h3>
+        <p className="muted">
+          You are performing consistently well. Focus on improving assignment
+          submissions to increase your overall score.
+        </p>
       </div>
     </div>
   );

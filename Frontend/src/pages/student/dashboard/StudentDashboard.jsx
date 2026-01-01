@@ -1,65 +1,151 @@
 import "./student-dashboard.css";
-import Quizzes from '../quiz/Quizzes'
-const Dashboard = () => {
-  return (
-    <>
-      <h1>Welcome back, Vipin!</h1>
-      <p className="muted">Here's your academic overview</p>
+import {
+  LineChart,
+  Line,
+  XAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+} from "recharts";
 
-      {/* TOP CARDS */}
-      <div className="dash-top">
-        <div className="card blue">
+/* ===== MOCK DATA ===== */
+const attendanceData = [
+  { day: "Mon", present: 1 },
+  { day: "Tue", present: 1 },
+  { day: "Wed", present: 0 },
+  { day: "Thu", present: 1 },
+  { day: "Fri", present: 1 },
+];
+
+const quizData = [
+  { name: "Completed", value: 0 },
+  { name: "Pending", value: 2 },
+];
+
+const COLORS = ["#2563eb", "#e5e7eb"];
+
+const StudentDashboard = () => {
+  return (
+    <div className="sd-page">
+      {/* Header */}
+      <div className="sd-header">
+        <h1>Welcome back, Vipin!</h1>
+        <p>Here's your academic overview</p>
+      </div>
+
+      {/* Top Cards */}
+      <div className="sd-cards">
+        <div className="sd-card primary">
           <span>Current Course</span>
           <h2>Web Development Fundamentals</h2>
-          <p>Code: CS101</p>
+          <small>Code: CS101</small>
         </div>
 
-        <div className="card">
-          <h3>Attendance</h3>
-          <strong>0%</strong>
-          <p className="muted">0 days present</p>
+        <div className="sd-card">
+          <span>Attendance</span>
+          <h3>0%</h3>
+          <small>0 days present</small>
         </div>
 
-        <div className="card">
-          <h3>Quiz Average</h3>
-          <strong>0%</strong>
-          <p className="muted">0 of 2 completed</p>
+        <div className="sd-card">
+          <span>Quiz Average</span>
+          <h3>0%</h3>
+          <small>0 of 2 completed</small>
         </div>
 
-        <div className="card">
-          <h3>Assignments</h3>
-          <strong>0%</strong>
-          <p className="muted">0 of 2 submitted</p>
+        <div className="sd-card">
+          <span>Assignments</span>
+          <h3>0%</h3>
+          <small>0 of 2 submitted</small>
         </div>
       </div>
 
-      {/* MIDDLE */}
-      <div className="dash-grid">
-        <div className="card big">
-          <h3>Attendance Trend (Last 14 Days)</h3>
-          <div className="placeholder">Chart will appear here</div>
+      {/* Course + Trainer */}
+      <div className="sd-grid">
+        <div className="sd-box">
+          <h3>Course Details</h3>
+          <div className="sd-list">
+            <p><span>Course Name</span>Web Development Fundamentals</p>
+            <p><span>Duration</span>12 weeks</p>
+            <p><span>Status</span><b className="active">Active</b></p>
+          </div>
         </div>
 
-        <div className="card">
+        <div className="sd-box">
+          <h3>Your Trainer</h3>
+          <div className="trainer">
+            <div className="avatar">D</div>
+            <div>
+              <b>Dr. Sarah Johnson</b>
+              <p>sarah@institute.com</p>
+              <p>+1 234 567 8901</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Attendance Chart */}
+      <div className="sd-box">
+        <h3>Attendance Trend (Last 14 Days)</h3>
+        <div className="chart-box">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={attendanceData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="day" />
+              <Tooltip />
+              <Line
+                type="monotone"
+                dataKey="present"
+                stroke="#2563eb"
+                strokeWidth={3}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+
+      {/* Bottom Grid */}
+      <div className="sd-grid">
+        <div className="sd-box">
           <h3>Quiz Performance</h3>
-          {/* <div className="placeholder"> */}
-            {/* No quiz results yet */}
-            <Quizzes/>
-            {/* </div> */}
+          <div className="chart-box">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={quizData}
+                  dataKey="value"
+                  innerRadius={60}
+                  outerRadius={85}
+                >
+                  {quizData.map((_, i) => (
+                    <Cell key={i} fill={COLORS[i]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+          <p className="muted center">No quiz results yet</p>
         </div>
 
-        <div className="card">
+        <div className="sd-box">
           <h3>Assignment Status</h3>
-          <div className="donut">Pending</div>
-        </div>
-
-        <div className="card">
-          <h3>Upcoming Deadlines</h3>
-          <p className="muted">No upcoming deadlines</p>
+          <div className="donut">
+            <span>Pending</span>
+          </div>
         </div>
       </div>
-    </>
+
+      {/* Upcoming */}
+      <div className="sd-box">
+        <h3>Upcoming Deadlines</h3>
+        <p className="muted">No upcoming deadlines</p>
+      </div>
+    </div>
   );
 };
 
-export default Dashboard;
+export default StudentDashboard;

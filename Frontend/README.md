@@ -109,3 +109,147 @@ src/
 ├── App.jsx
 ├── main.jsx
 └── index.css
+
+
+# 🎓 Institute Management System (Frontend)
+
+A modern, role-based **Institute Management System frontend** built with **React.js (JSX)** and **pure CSS**.  
+This project focuses on **real-world academic workflows**, clean UI, and scalability — without using any external UI libraries.
+
+This is a **frontend-only application** using mock data, designed to be easily connected to a backend later.
+
+---
+
+## 🚀 Tech Stack
+
+- React.js (18.x)
+- React Router DOM (v6)
+- Recharts (for charts & analytics)
+- CSS (custom styling, no UI frameworks)
+- Vite (development & build tool)
+
+❌ No backend  
+❌ No UI libraries (MUI, Bootstrap, AntD)  
+✅ Production-ready UI  
+✅ Backend-ready architecture  
+
+---
+
+## 🎭 User Roles
+
+### 👨‍🎓 Student Panel
+Students can:
+- View dashboard with analytics
+- Track attendance
+- View quizzes
+- View assignments uploaded by trainer
+- Download assignment PDFs
+- Upload assignment solution PDFs
+- Track performance with charts
+- Receive notifications (read / unread)
+- View profile
+
+### 👨‍🏫 Trainer Panel (In Progress)
+Trainers will be able to:
+- Upload assignments (PDF)
+- Manage quizzes
+- Take attendance
+- View student submissions
+- Monitor student performance
+
+### 👨‍💼 Admin Panel (Planned)
+Admins will be able to:
+- Manage courses, trainers, students
+- Monitor attendance, quizzes, assignments
+- View analytics & reports
+- Full system access
+
+---
+
+## 📁 Project Structure
+
+src/
+│
+├── pages/
+│   ├── student/
+│   │   ├── Dashboard.jsx
+│   │   ├── Attendance.jsx
+│   │   ├── Quizzes.jsx
+│   │   ├── Assignments.jsx
+│   │   ├── Performance.jsx
+│   │   ├── Notifications.jsx
+│   │   └── Profile.jsx
+│
+├── layouts/
+│   └── StudentLayout.jsx
+│
+├── components/
+│   └── layout/
+│       └── Sidebar.jsx
+│
+├── routes/
+│   └── AppRoutes.jsx
+│
+├── index.css
+├── main.jsx
+└── App.jsx
+
+---
+
+## 📊 Student Dashboard Features
+
+- Attendance trend (Line chart)
+- Quiz & assignment performance charts
+- Course details
+- Trainer information
+- Assignment & quiz overview
+- Upcoming deadlines
+- Clean, professional dashboard layout
+
+All charts are built using **Recharts** and are fully responsive.
+
+---
+
+## 📄 Assignments – Real World Flow
+
+- Trainer uploads assignment PDF
+- Student can:
+  - View / download assignment file
+  - Check description & due date
+  - Upload solution PDF
+- Assignment status updates:
+  - Pending → Submitted
+
+(Currently handled using mock data and frontend state)
+
+---
+
+## 🔔 Notifications System
+
+- Assignment notifications
+- Quiz notifications
+- Read / Unread states
+- Filters:
+  - All
+  - Assignments
+  - Quizzes
+- Mark as read functionality (frontend only)
+
+---
+
+## 🎨 UI / UX Principles
+
+- Fixed sidebar, scrollable content area
+- Clean spacing and typography
+- Dashboard-style layout
+- Responsive design (desktop & mobile)
+- CSS variables for easy dark-theme support
+- No clutter, no unnecessary animations
+
+---
+
+## ⚙️ Setup & Run
+
+```bash
+npm install
+npm run dev

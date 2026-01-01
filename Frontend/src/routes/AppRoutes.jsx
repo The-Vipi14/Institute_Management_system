@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import StudentLayout from "../layouts/StudentLayout/StudentLayout";
 
 import Dashboard from "../pages/student/dashboard/StudentDashboard";
@@ -12,6 +12,7 @@ import Notifications from "../pages/student/Notification/StudentNotification";
 const AppRoutes = () => {
   return (
     <Routes>
+      <Route path="/" element={<Navigate to="/student/dashboard" replace />} />
       <Route path="/student" element={<StudentLayout />}>
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="profile" element={<Profile />} />

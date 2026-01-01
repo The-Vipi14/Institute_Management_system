@@ -1,63 +1,116 @@
 // src/pages/student/Notifications.jsx
 import "./studentNotifications.css";
 
+import { useState } from "react";
+
+const dummyNotifications = [
+  {
+    id: 1,
+    type: "assignment",
+    title: "New Assignment Uploaded",
+    message: "React Hooks assignment has been uploaded.",
+    time: "2 hours ago",
+    read: false,
+  },
+  {
+    id: 2,
+    type: "quiz",
+    title: "Quiz Available",
+    message: "JavaScript Basics quiz is now live.",
+    time: "Yesterday",
+    read: false,
+  },
+  {
+    id: 3,
+    type: "assignment",
+    title: "Assignment Graded",
+    message: "Your HTML assignment has been graded.",
+    time: "2 days ago",
+    read: true,
+  },
+];
+
 const Notifications = () => {
+  const [filter, setFilter] = useState("all");
+  const [notifications, setNotifications] = useState(dummyNotifications);
+
+  const filteredData =
+    filter === "all"
+      ? notifications
+      : notifications.filter((n) => n.type === filter);
+
+  const markAsRead = (id) => {
+    setNotifications((prev) =>
+      prev.map((n) =>
+        n.id === id ? { ...n, read: true } : n
+      )
+    );
+  };
+
   return (
     <div className="sn-page">
       {/* Header */}
       <div className="sn-header">
         <h1>Notifications</h1>
-        <p>Stay updated with important announcements</p>
+        <p>Stay updated with assignments & quizzes</p>
       </div>
 
-      {/* Filters */}
+      {/* Filter buttons */}
       <div className="sn-filters">
-        <button className="sn-filter active">All</button>
-        <button className="sn-filter">Unread</button>
-        <button className="sn-filter">Assignments</button>
-        <button className="sn-filter">Quizzes</button>
+        <button
+          className={filter === "all" ? "active" : ""}
+          onClick={() => setFilter("all")}
+        >
+          All
+        </button>
+        <button
+          className={filter === "assignment" ? "active" : ""}
+          onClick={() => setFilter("assignment")}
+        >
+          Assignments
+        </button>
+        <button
+          className={filter === "quiz" ? "active" : ""}
+          onClick={() => setFilter("quiz")}
+        >
+          Quizzes
+        </button>
       </div>
 
-      {/* Notification list */}
+      {/* Notification List */}
       <div className="sn-list">
-        <div className="sn-item unread">
-          <div className="sn-icon assignment">📝</div>
-          <div className="sn-content">
-            <h4>New Assignment Posted</h4>
-            <p>JavaScript Basics assignment has been posted.</p>
-            <span className="sn-time">2 hours ago</span>
-          </div>
-        </div>
+        {filteredData.length === 0 && (
+          <div className="sn-empty">No notifications</div>
+        )}
 
-        <div className="sn-item">
-          <div className="sn-icon quiz">📘</div>
-          <div className="sn-content">
-            <h4>Quiz Result Published</h4>
-            <p>Your CSS Fundamentals quiz result is available.</p>
-            <span className="sn-time">Yesterday</span>
-          </div>
-        </div>
+        {filteredData.map((item) => (
+          <div
+            key={item.id}
+            className={`sn-card ${item.read ? "read" : "unread"}`}
+          >
+            <div className="sn-left">
+              <div className={`sn-dot ${item.type}`} />
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.message}</p>
+                <span>{item.time}</span>
+              </div>
+            </div>
 
-        <div className="sn-item unread">
-          <div className="sn-icon attendance">📅</div>
-          <div className="sn-content">
-            <h4>Attendance Marked</h4>
-            <p>Your attendance for today has been marked present.</p>
-            <span className="sn-time">Today</span>
+            {!item.read && (
+              <button
+                className="mark-btn"
+                onClick={() => markAsRead(item.id)}
+              >
+                Mark as read
+              </button>
+            )}
           </div>
-        </div>
-
-        <div className="sn-item">
-          <div className="sn-icon general">🔔</div>
-          <div className="sn-content">
-            <h4>System Update</h4>
-            <p>New features have been added to your dashboard.</p>
-            <span className="sn-time">3 days ago</span>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
 };
 
 export default Notifications;
+
