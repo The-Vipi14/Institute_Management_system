@@ -1,0 +1,78 @@
+.gm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.gm-modal {
+  background: #ffffff;
+  width: 420px;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gm-modal h2 {
+  margin-bottom: 4px;
+}
+
+.gm-modal p {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.gm-field {
+  margin-bottom: 16px;
+}
+
+.gm-field label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.gm-field input,
+.gm-field textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.gm-field input:focus,
+.gm-field textarea:focus {
+  border-color: #2563eb;
+}
+
+.gm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.gm-cancel {
+  background: #f3f4f6;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.gm-submit {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.gm-submit:hover {
+  background: #1e40af;
+}

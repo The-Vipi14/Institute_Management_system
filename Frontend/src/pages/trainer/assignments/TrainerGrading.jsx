@@ -1,66 +1,45 @@
+import { useState } from "react";
 import "./TrainerGrading.css";
-import { assignmentsData } from "../../../data/assignmentsData";
+import GradingModal from "./GradingModal";
 
 const TrainerGrading = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="tg-page">
       <div className="tg-header">
         <h1>Assignment Grading</h1>
-        <p>Review submissions and provide marks & feedback</p>
+        <p>Review submissions and provide grades</p>
       </div>
 
-      {assignmentsData.map((a) => (
-        <div key={a.id} className="tg-assignment">
-          <div className="tg-assignment-head">
-            <h3>{a.title}</h3>
-            <span className="badge open">Open</span>
+      <div className="tg-card">
+        <h3>React Hooks Assignment</h3>
+        <p className="tg-desc">
+          Practice useState, useEffect, and useContext.
+        </p>
+
+        <div className="tg-student">
+          <div>
+            <strong>Vipin</strong>
+            <p className="tg-file">
+              📄 vipin-react-hooks.pdf
+            </p>
+            <small>Submitted: 05 Oct 2024</small>
           </div>
 
-          <p className="muted">{a.description}</p>
-
-          {a.submissions.length === 0 && (
-            <p className="muted">No submissions yet.</p>
-          )}
-
-          {a.submissions.map((s, idx) => (
-            <div key={idx} className="tg-row">
-              {/* LEFT */}
-              <div className="tg-info">
-                <div className="student">
-                  <strong>{s.studentId}</strong>
-                  <span className="date">{s.submittedAt}</span>
-                </div>
-
-                <div className="file">📄 {s.studentFile}</div>
-              </div>
-
-              {/* RIGHT */}
-              <div className="tg-grade">
-                <input
-                  type="number"
-                  placeholder="Marks (out of 100)"
-                  disabled
-                />
-
-                <textarea
-                  placeholder="Write feedback for the student"
-                  disabled
-                />
-
-                <div className="tg-actions">
-                  <button className="save-btn" disabled>
-                    Save Grade
-                  </button>
-
-                  <span className="hint">
-                    (Backend integration pending)
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
+          <button
+            className="tg-grade-btn"
+            onClick={() => setShowModal(true)}
+          >
+            Grade
+          </button>
         </div>
-      ))}
+      </div>
+
+      {/* MODAL */}
+      {showModal && (
+        <GradingModal onClose={() => setShowModal(false)} />
+      )}
     </div>
   );
 };
