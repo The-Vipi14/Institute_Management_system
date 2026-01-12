@@ -1,52 +1,65 @@
 import "./TrainerSubmissions.css";
-import { assignmentsData } from "../../../data/assignmentsData";
 
 const TrainerSubmissions = () => {
   return (
-    <div className="tsu-page">
-      <div className="tsu-header">
-        <h1>Student Submissions</h1>
-        <p>View submissions received for each assignment</p>
+    <div className="ts-page">
+      {/* Header */}
+      <div className="ts-header">
+        <h1>Submissions</h1>
+        <p>Review student assignment submissions</p>
       </div>
 
-      {assignmentsData.length === 0 && (
-        <p className="muted">No assignments available.</p>
-      )}
+      {/* Submission List */}
+      <div className="ts-list">
 
-      <div className="tsu-list">
-        {assignmentsData.map((a) => (
-          <div key={a.id} className="tsu-card">
-            {/* Assignment Info */}
-            <div className="tsu-assignment">
-              <h3>{a.title}</h3>
-              <p>{a.description}</p>
-              <small>Due: {a.dueDate || "Not set"}</small>
-            </div>
+        {/* Submission Card */}
+        <div className="ts-card">
+          <div className="ts-left">
+            <h3>React Hooks Assignment</h3>
+            <p className="muted">
+              Student: <strong>Vipin</strong> (vipin@gmail.com)
+            </p>
 
-            {/* Submissions */}
-            <div className="tsu-submissions">
-              <h4>Submissions</h4>
-
-              {a.submissions.length === 0 ? (
-                <p className="muted">No submissions yet.</p>
-              ) : (
-                a.submissions.map((s, index) => (
-                  <div key={index} className="submission-row">
-                    <div>
-                      <strong>Student:</strong> {s.studentId}
-                    </div>
-                    <div className="file">
-                      📄 {s.studentFile}
-                    </div>
-                    <div className="date">
-                      {s.submittedAt}
-                    </div>
-                  </div>
-                ))
-              )}
+            <div className="ts-meta">
+              <span>📄 vipin-react-hooks.pdf</span>
+              <span>📅 Submitted: 05 Oct 2024</span>
             </div>
           </div>
-        ))}
+
+          <div className="ts-right">
+            <span className="ts-badge pending">Pending</span>
+
+            <div className="ts-actions">
+              <button className="outline">View PDF</button>
+              <button className="primary">Grade</button>
+            </div>
+          </div>
+        </div>
+
+        {/* Another Submission */}
+        <div className="ts-card">
+          <div className="ts-left">
+            <h3>JavaScript Fundamentals</h3>
+            <p className="muted">
+              Student: <strong>Aman</strong> (aman@gmail.com)
+            </p>
+
+            <div className="ts-meta">
+              <span>📄 js-fundamentals.pdf</span>
+              <span>📅 Submitted: 07 Oct 2024</span>
+            </div>
+          </div>
+
+          <div className="ts-right">
+            <span className="ts-badge graded">Graded</span>
+
+            <div className="ts-actions">
+              <button className="outline">View PDF</button>
+              <button className="success">View Grade</button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
