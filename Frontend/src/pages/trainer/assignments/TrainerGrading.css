@@ -59,3 +59,20 @@
 .tg-grade-btn:hover {
   background: #1e40af;
 }
+
+
+
+.tg-graded {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tg-badge {
+  background: #dcfce7;
+  color: #166534;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
