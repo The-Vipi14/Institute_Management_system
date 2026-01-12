@@ -1,20 +1,28 @@
 .sa-page {
-  padding: 28px;
+  padding: 24px;
   color: var(--text-main);
 }
 
 /* Header */
 .sa-header {
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .sa-header h1 {
   font-size: 26px;
-  margin-bottom: 4px;
 }
 
 .sa-header p {
   font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Empty */
+.sa-empty {
+  padding: 40px;
+  border: 1px dashed var(--border);
+  border-radius: 14px;
+  text-align: center;
   color: var(--text-muted);
 }
 
@@ -33,60 +41,79 @@
   padding: 18px;
   display: flex;
   justify-content: space-between;
-  gap: 22px;
+  gap: 20px;
 }
 
 /* Info */
 .sa-info h3 {
-  font-size: 17px;
+  font-size: 16px;
+}
+
+.sa-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 6px;
 }
 
-.sa-info p {
+.desc {
   font-size: 14px;
   color: var(--text-muted);
   margin-bottom: 10px;
 }
 
-/* Meta */
 .sa-meta {
-  display: flex;
-  gap: 16px;
   font-size: 13px;
-  align-items: center;
   margin-bottom: 10px;
 }
 
-.status {
-  padding: 4px 10px;
-  border-radius: 20px;
+/* Badges */
+.badge {
   font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 14px;
   font-weight: 600;
 }
 
-.status.pending {
+.badge.pending {
   background: rgba(245, 158, 11, 0.15);
   color: #f59e0b;
 }
 
-.status.submitted {
+.badge.submitted {
+  background: rgba(37, 99, 235, 0.15);
+  color: #2563eb;
+}
+
+.badge.graded {
   background: rgba(16, 185, 129, 0.15);
   color: #10b981;
 }
 
-/* Teacher File */
+/* Teacher file */
 .teacher-file {
-  font-size: 13px;
   display: flex;
-  gap: 8px;
   align-items: center;
+  gap: 10px;
+  font-size: 13px;
 }
 
-.file-link {
+.link-btn {
+  background: none;
+  border: none;
   color: #2563eb;
-  font-weight: 500;
-  text-decoration: underline;
   cursor: pointer;
+  padding: 0;
+  font-weight: 500;
+}
+
+/* Grade box */
+.grade-box {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.08);
+  font-size: 14px;
 }
 
 /* Action */
@@ -97,9 +124,10 @@
 
 .upload-btn {
   padding: 10px 16px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #2563eb;
   color: #fff;
+  border: none;
   cursor: pointer;
   font-size: 14px;
 }
@@ -108,23 +136,15 @@
   opacity: 0.9;
 }
 
-.file-info {
+.muted {
   font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.file-name {
   color: var(--text-muted);
-  font-size: 13px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .sa-card {
     flex-direction: column;
-    gap: 14px;
   }
 
   .sa-action {
