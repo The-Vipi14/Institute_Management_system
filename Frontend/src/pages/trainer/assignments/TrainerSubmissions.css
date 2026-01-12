@@ -1,0 +1,92 @@
+.tsu-page {
+  padding: 24px;
+  color: var(--text-main);
+}
+
+/* Header */
+.tsu-header {
+  margin-bottom: 22px;
+}
+
+.tsu-header h1 {
+  font-size: 26px;
+}
+
+.tsu-header p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* List */
+.tsu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Card */
+.tsu-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+/* Assignment */
+.tsu-assignment h3 {
+  margin-bottom: 4px;
+}
+
+.tsu-assignment p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.tsu-assignment small {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Submissions */
+.tsu-submissions {
+  margin-top: 14px;
+}
+
+.tsu-submissions h4 {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.submission-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.submission-row .file {
+  color: #2563eb;
+}
+
+.submission-row .date {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.muted {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .submission-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

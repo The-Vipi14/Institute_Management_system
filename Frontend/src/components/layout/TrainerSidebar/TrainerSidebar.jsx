@@ -19,6 +19,7 @@ const TrainerSidebar = () => {
         <NavLink to="/trainer/students">Students</NavLink>
         <NavLink to="/trainer/attendance">Attendance</NavLink>
         <NavLink to="/trainer/assignments">Assignments</NavLink>
+        <NavLink to="/trainer/submissions">Submissions</NavLink>
         <NavLink to="/trainer/quizzes">Quizzes</NavLink>
         <NavLink to="/trainer/reports">Reports</NavLink>
       </nav>
