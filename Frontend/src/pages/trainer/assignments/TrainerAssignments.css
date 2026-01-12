@@ -1,0 +1,112 @@
+.ta-page {
+  padding: 24px;
+  color: var(--text-main);
+}
+
+/* Header */
+.ta-header {
+  margin-bottom: 20px;
+}
+
+.ta-header h1 {
+  font-size: 26px;
+}
+
+.ta-header p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Form */
+.ta-form {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ta-form input,
+.ta-form textarea {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-main);
+}
+
+.ta-form textarea {
+  resize: none;
+  height: 90px;
+}
+
+.ta-row {
+  display: flex;
+  gap: 12px;
+}
+
+.file-upload {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px dashed var(--border);
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submit-btn {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #10b981;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* List */
+.ta-list h3 {
+  margin-bottom: 12px;
+}
+
+.ta-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ta-card h4 {
+  margin: 0 0 4px;
+}
+
+.ta-card p {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.file-name {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.muted {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ta-row {
+    flex-direction: column;
+  }
+}
