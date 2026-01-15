@@ -1,0 +1,133 @@
+.admin-dashboard {
+  padding: 2rem;
+  background: var(--bg-main);
+}
+
+/* Header */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.settings-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Stats */
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  color: white;
+}
+
+.stat-card.blue { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.stat-card.green { background: linear-gradient(135deg, #10b981, #059669); }
+.stat-card.purple { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+.stat-card:not(.blue):not(.green):not(.purple) {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+}
+
+/* Grid */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-card {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+/* Charts */
+.fake-bar-chart,
+.fake-line-chart {
+  height: 180px;
+  background: var(--bg-soft);
+  border-radius: 0.75rem;
+  margin-top: 1rem;
+}
+
+.donut-chart {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: conic-gradient(#2563eb 0 40%, #10b981 40% 70%, #7c3aed 70% 100%);
+  margin: 1rem auto;
+}
+
+.horizontal-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.horizontal-bars div {
+  height: 32px;
+  background: #10b981;
+  border-radius: 0.5rem;
+  color: white;
+  padding-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Table */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.courses-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr 1fr;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.status.active {
+  color: #15803d;
+}
+
+.status.upcoming {
+  color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .course-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
