@@ -1,0 +1,134 @@
+.admin-trainer-page {
+  padding: 24px;
+}
+
+/* Header */
+.at-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.at-header h1 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.at-header p {
+  font-size: 14px;
+  color: #777;
+}
+
+.primary-btn {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Filters */
+.at-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.at-filters input,
+.at-filters select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* Grid */
+.at-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* Card */
+.at-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.at-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.at-card-header h3 {
+  font-size: 16px;
+}
+
+.status {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.status.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.inactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.at-info p {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Actions */
+.at-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.at-actions button {
+  flex: 1;
+  padding: 8px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.at-actions .view {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.at-actions .edit {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.at-actions .delete {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .at-filters {
+    flex-direction: column;
+  }
+}
