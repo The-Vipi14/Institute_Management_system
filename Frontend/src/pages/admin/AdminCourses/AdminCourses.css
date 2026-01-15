@@ -1,0 +1,128 @@
+.admin-courses-page {
+  padding: 2rem;
+  background: var(--bg-main);
+}
+
+.courses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.course-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.course-poster {
+  height: 120px;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  color: #fff;
+  font-size: 3rem;
+  display: grid;
+  place-items: center;
+}
+
+.course-code {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.course-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.course-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.course-actions button {
+  flex: 1;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+}
+
+.course-actions .danger {
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.course-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.course-form input,
+.course-form textarea {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .admin-courses-page {
+    padding: 1.25rem;
+  }
+}
