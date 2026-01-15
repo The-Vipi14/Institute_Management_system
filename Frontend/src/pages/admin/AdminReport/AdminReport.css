@@ -1,0 +1,152 @@
+.admin-report-page {
+  padding: 24px;
+}
+
+/* Header */
+.ar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ar-header h1 {
+  font-size: 22px;
+}
+
+.ar-header p {
+  font-size: 14px;
+  color: #777;
+}
+
+.ar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.primary-btn {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background: #f1f5f9;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Filters */
+.ar-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ar-filters select,
+.ar-filters input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Cards */
+.ar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.ar-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+}
+
+.ar-type {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #6366f1;
+}
+
+.ar-card h3 {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+.ar-value {
+  font-size: 22px;
+  font-weight: bold;
+  color: #111;
+}
+
+/* Section */
+.ar-section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+/* Table */
+.ar-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.ar-table th,
+.ar-table td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.ar-table th {
+  background: #f8fafc;
+  color: #555;
+}
+
+.ar-table tr:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+/* Pagination */
+.ar-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.ar-pagination button,
+.ar-pagination span {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .ar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ar-filters {
+    flex-direction: column;
+  }
+}
