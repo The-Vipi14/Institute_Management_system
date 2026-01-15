@@ -1,0 +1,13 @@
+.trainer-layout {
+  display: flex;
+  height: 100vh;
+  background: var(--bg-main);
+}
+
+/* Right side content */
+.trainer-content {
+  flex: 1;
+  overflow-y: auto; /* 👈 sirf content scroll kare */
+  padding: 24px;
+  background: var(--bg-main);
+}
