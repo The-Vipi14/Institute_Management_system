@@ -166,33 +166,6 @@ Admins will be able to:
 
 ---
 
-## 📁 Project Structure
-
-src/
-│
-├── pages/
-│   ├── student/
-│   │   ├── Dashboard.jsx
-│   │   ├── Attendance.jsx
-│   │   ├── Quizzes.jsx
-│   │   ├── Assignments.jsx
-│   │   ├── Performance.jsx
-│   │   ├── Notifications.jsx
-│   │   └── Profile.jsx
-│
-├── layouts/
-│   └── StudentLayout.jsx
-│
-├── components/
-│   └── layout/
-│       └── Sidebar.jsx
-│
-├── routes/
-│   └── AppRoutes.jsx
-│
-├── index.css
-├── main.jsx
-└── App.jsx
 
 ---
 
