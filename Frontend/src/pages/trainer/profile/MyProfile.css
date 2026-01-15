@@ -1,0 +1,143 @@
+.profile-page {
+  padding: 2rem;
+  background: var(--bg-main);
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.profile-header h1 {
+  font-size: 1.8rem;
+}
+
+.profile-header p {
+  color: var(--text-muted);
+}
+
+.edit-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.edit-btn:hover {
+  background: var(--bg-soft);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.5rem;
+}
+
+.profile-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  text-align: center;
+  padding-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-cover {
+  height: 120px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  border-radius: 1rem 1rem 0 0;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  background: var(--brand);
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: -40px auto 0.5rem;
+  border: 4px solid var(--bg-card);
+}
+
+.role {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.profile-info {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profile-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.info-card h3 {
+  margin-bottom: 1rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.info-grid span {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.stat-box {
+  background: var(--bg-soft);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-box strong {
+  font-size: 1.4rem;
+  display: block;
+}
+
+.stat-box span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
