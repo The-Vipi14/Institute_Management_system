@@ -1,182 +1,131 @@
-/* PAGE */
+/* ================= BASE ================= */
 .sd-page {
-  padding: 28px;
-  color: var(--text-main);
-}
-
-/* HEADER */
-.sd-header {
-  margin-bottom: 24px;
+  padding: 24px;
 }
 
 .sd-header h1 {
-  font-size: 26px;
-  font-weight: 600;
   margin-bottom: 4px;
+  color: var(--text-main, #0f172a);
 }
 
 .sd-header p {
-  font-size: 14px;
-  color: var(--text-muted);
+  color: var(--text-muted, #64748b);
 }
 
-/* TOP CARDS */
+/* ================= CARDS ================= */
 .sd-cards {
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  gap: 16px;
 }
 
 .sd-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: var(--bg-main, #ffffff);
+  border-radius: 14px;
   padding: 18px;
-  min-height: 120px; /* 👈 equal height */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border: 1px solid var(--border, #e5e7eb);
 }
 
 .sd-card span {
-  font-size: 13px;
-  color: var(--text-muted);
+  font-size: 14px;
+  color: var(--text-muted, #64748b);
 }
 
+.sd-card h3,
 .sd-card h2 {
-  font-size: 18px;
-  font-weight: 600;
+  margin-top: 6px;
 }
 
-.sd-card h3 {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.sd-card small {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-/* PRIMARY CARD */
 .sd-card.primary {
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  background: #2563eb;
   color: #fff;
-  border: none;
 }
 
 .sd-card.primary span,
 .sd-card.primary small {
-  color: rgba(255, 255, 255, 0.85);
+  color: #e0e7ff;
 }
 
-/* GRID SECTIONS */
-.sd-grid {
-  margin-top: 22px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 18px;
+.sd-card.graded {
+  border: 2px solid #22c55e;
 }
 
-.sd-box {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 18px;
+.sd-card .badge {
+  display: inline-block;
+  margin-top: 6px;
+  background: #dcfce7;
+  color: #166534;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
-.sd-box h3 {
-  font-size: 16px;
-  font-weight: 500;
+/* ================= SECTION ================= */
+.sd-section {
+  margin-top: 32px;
+}
+
+.sd-section h2 {
   margin-bottom: 12px;
 }
 
-/* FULL WIDTH */
-.sd-box.wide {
-  grid-column: span 2;
-}
-
-/* CHART */
-.chart-box {
-  width: 100%;
-  height: 260px;
-}
-
-/* DONUT */
-.donut {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 10px solid #2563eb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 24px auto 0;
-  font-weight: 600;
-}
-
-/* TEXT */
-.muted {
-  font-size: 14px;
-  color: var(--text-muted);
-}
-
-.center {
-  text-align: center;
-}
-
-/* TRAINER */
-.trainer {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-
-.trainer .avatar {
-  width: 42px;
-  height: 42px;
-  background: #2563eb;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-}
-
-/* LIST */
-.sd-list p {
+/* ================= ACTIVITY ================= */
+.sd-activity {
+  background: var(--bg-main, #ffffff);
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid var(--border, #e5e7eb);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.sd-activity p {
+  color: var(--text-muted, #64748b);
   font-size: 14px;
-  padding: 6px 0;
 }
 
-.sd-list span {
-  color: var(--text-muted);
+.sd-badge.success {
+  background: #dcfce7;
+  color: #166534;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
 }
 
-.active {
-  color: #10b981;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1100px) {
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
   .sd-cards {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .sd-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sd-box.wide {
-    grid-column: span 1;
-  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .sd-cards {
     grid-template-columns: 1fr;
   }
+
+  .sd-activity {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* ================= DARK THEME ================= */
+[data-theme="dark"] .sd-card,
+[data-theme="dark"] .sd-activity {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+[data-theme="dark"] .sd-card.primary {
+  background: #1d4ed8;
+}
+
+[data-theme="dark"] .sd-card .badge {
+  background: rgba(22, 163, 74, 0.2);
+  color: #22c55e;
 }
