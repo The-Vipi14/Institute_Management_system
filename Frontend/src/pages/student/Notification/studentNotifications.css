@@ -1,138 +1,155 @@
+/* =========================
+   BASE
+========================= */
 .sn-page {
-  padding: 28px;
-  color: var(--text-main);
-}
-
-/* Header */
-.sn-header {
-  margin-bottom: 20px;
+  padding: 24px;
 }
 
 .sn-header h1 {
-  font-size: 26px;
   margin-bottom: 4px;
+  color: var(--text-main, #0f172a);
 }
 
 .sn-header p {
-  font-size: 14px;
-  color: var(--text-muted);
+  color: var(--text-muted, #64748b);
 }
 
-/* Filters */
-.sn-filters {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.sn-filters button {
-  padding: 8px 14px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--bg-card);
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.sn-filters button.active {
-  background: #2563eb;
-  color: #fff;
-  border-color: #2563eb;
-}
-
-/* List */
+/* =========================
+   LIST
+========================= */
 .sn-list {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-/* Card */
+/* =========================
+   CARD
+========================= */
 .sn-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: var(--bg-main, #ffffff);
+  border-radius: 14px;
   padding: 16px;
+  border: 1px solid var(--border, #e5e7eb);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 14px;
+  position: relative;
 }
 
 .sn-card.unread {
   border-left: 4px solid #2563eb;
+  background: var(--bg-soft, #f8fafc);
 }
 
-.sn-card.read {
-  opacity: 0.7;
-}
-
-/* Left */
-.sn-left {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-
-.sn-dot {
-  width: 10px;
-  height: 10px;
+/* =========================
+   ICON
+========================= */
+.sn-icon {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
-.sn-dot.assignment {
-  background: #10b981;
+.sn-icon.success {
+  background: #dcfce7;
+  color: #166534;
 }
 
-.sn-dot.quiz {
-  background: #f59e0b;
+.sn-icon.warning {
+  background: #fef3c7;
+  color: #92400e;
 }
 
-.sn-left h3 {
-  font-size: 15px;
+.sn-icon.info {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.sn-content h4 {
   margin-bottom: 4px;
+  color: var(--text-main, #0f172a);
 }
 
-.sn-left p {
+.sn-content p {
   font-size: 14px;
-  color: var(--text-muted);
+  color: var(--text-muted, #64748b);
 }
 
-.sn-left span {
+.sn-meta {
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--text-muted, #64748b);
 }
 
-/* Button */
-.mark-btn {
-  background: transparent;
-  border: 1px solid var(--border);
-  padding: 8px 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 13px;
+/* =========================
+   BADGE
+========================= */
+.sn-badge {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  background: #2563eb;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
 }
 
-.mark-btn:hover {
-  background: var(--bg-main);
-}
-
-/* Empty */
-.sn-empty {
-  text-align: center;
-  padding: 40px;
-  color: var(--text-muted);
-}
-
-/* Responsive */
-@media (max-width: 700px) {
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 640px) {
   .sn-card {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    padding: 14px;
   }
 
-  .mark-btn {
-    align-self: flex-end;
+  .sn-badge {
+    position: static;
+    margin-top: 10px;
   }
+
+  .sn-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   DARK THEME
+========================= */
+[data-theme="dark"] .sn-card {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+[data-theme="dark"] .sn-card.unread {
+  background: #020617;
+}
+
+[data-theme="dark"] .sn-icon.success {
+  background: rgba(22, 163, 74, 0.2);
+  color: #22c55e;
+}
+
+[data-theme="dark"] .sn-icon.warning {
+  background: rgba(202, 138, 4, 0.2);
+  color: #facc15;
+}
+
+[data-theme="dark"] .sn-icon.info {
+  background: rgba(14, 165, 233, 0.2);
+  color: #38bdf8;
 }
